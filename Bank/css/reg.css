@@ -1,0 +1,136 @@
+section {
+  min-height: 400px;
+  padding: 20px;
+}
+section .title {
+  display: block;
+  text-align: center;
+  margin-bottom: 40px;
+}
+section .title hr {
+  width: 5%;
+  border-color: turquoise;
+}
+section .progressionBar {
+  display: flex;
+  height: auto;
+  padding: 0 10%;
+}
+section .progressionBar .step {
+  height: auto;
+  width: 33%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+section .progressionBar .step p {
+  margin: 0;
+  font-size: 18px;
+}
+section .progressionBar .step.active {
+  background-color: whitesmoke;
+}
+section .progressionBar .step.active p {
+  margin: 0;
+  color: black;
+}
+section .progressionBar .step.completed {
+  background-color: whitesmoke;
+  opacity: 0.5;
+}
+section .formArea {
+  display: block;
+  height: auto;
+  padding: 20px 10%;
+  text-align: center;
+}
+section .formArea form {
+  display: block;
+  height: auto;
+  padding: 20px 10%;
+  text-align: center;
+}
+section .formArea form div.fields {
+  display: grid;
+  width: 60%;
+  margin: 30px 20%;
+}
+section .formArea form div.fields label {
+  text-align: left;
+  padding-left: 10px;
+  color: black;
+}
+section .formArea form div.fields input {
+  border: 0;
+  border-bottom: 1px solid grey;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  outline: none;
+}
+section .formArea form div.fields input:focus {
+  border-bottom: 2px solid black;
+}
+
+section .formArea form div.fields select {
+  border: 0;
+  border-bottom: 1px solid grey;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  outline: none;
+}
+section .formArea form div.fields select:focus {
+  border-bottom: 2px solid turquoise;
+}
+
+
+section .formArea form div.fields input[type=number] {
+  border: 0;
+  border-bottom: 1px solid grey;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  outline: none;
+}
+section .formArea form div.fields input[type=number]:focus {
+  border-bottom: 2px solid turquoise;
+}
+
+
+section .formArea form div.button {
+  display: flex;
+  width: 60%;
+  margin: 0 20%;
+}
+section .formArea form div.button .back {
+  display: flex;
+  justify-content: flex-start;
+}
+section .formArea form div.button .next {
+  display: flex;
+  justify-content: flex-end;
+}
+section .formArea form div.button div {
+  width: 50%;
+}
+section .formArea form div.button div div {
+  width: 40px;
+  height: 40px;
+  background-color: turquoise;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+section .formArea form div.button div div i {
+  color: white;
+  padding-top: 10px;
+}
+section .formArea form#personalInfo {
+  display: none;
+}
+section .formArea form#professionalInfo {
+  display: none;
+}

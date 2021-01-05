@@ -1,0 +1,29 @@
+div#FeatureCakesContainer.container.site-section{
+  padding-top:50px;
+}
+
+h1#FeatureCakesText{
+  text-align:center;
+  font-family:comic sans MS;
+}
+
+#FeatureCakes{
+  text-align:center;
+  font-family:comic sans MS;
+  margin-bottom:61px;
+}
+
+div#FeatureCakesBackground.row{
+  background-color:rgba(221,23,154,0.35);
+  margin-bottom:50px;
+}
+
+p#FCPrice.text-left{
+  font-family:Arial, sans-serif, helvetica;
+  font-size:20px;
+}
+
+button#FCOrderNowButton.btn.btn-default{
+  padding-left:47px;
+}
+
