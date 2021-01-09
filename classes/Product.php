@@ -42,6 +42,7 @@ class Product
 
 
     	 $bankName = Session::get('bank_name');
+	 $bankId = Session::get('id');
 
     	 if ($productName == "" || $catId == 0 || $body == "" || $bid_start_from == "" || $publish_date == "" || $end_date_time == "") {
     	 	$msg = "<span class='error'>Fields Should not empty.</span>";
@@ -58,8 +59,8 @@ class Product
 	move_uploaded_file($file_temp, $uploaded_image);
 	
 	$randId = rand();
-    $query = "INSERT INTO tbl_product(productName, catId, body, bid_start_from, image, publish_date, end_date_time, bank_name, rand_id) 
-    VALUES('$productName','$catId','$body','$bid_start_from','$uploaded_image','$publish_date','$end_date_time','$bankName', '$randId')";
+    $query = "INSERT INTO tbl_product(productName, catId, body, bid_start_from, image, publish_date, end_date_time, bank_name, id, rand_id) 
+    VALUES('$productName','$catId','$body','$bid_start_from','$uploaded_image','$publish_date','$end_date_time','$bankName','$bankId','$randId')";
 	$productinsert = $this->db->insert($query);
 
     $query2 = "insert into tbl_bid(productName,bid_start_from,name,email,phone,district,bid_data,bank_name, rand_id) VALUES ('$productName','$bid_start_from','0','0',0,'0',0,'$bankName', '$randId')";
@@ -104,12 +105,8 @@ class Product
 
 
 		public function productByBank($id){
-			$bankName = mysqli_real_escape_string($this->db->link, $id);
-			$query = "SELECT tbl_product.*, bank_reg.bank_name
-					FROM tbl_product
-					JOIN bank_reg
-					ON tbl_product.bank_name = bank_reg.bank_name 
-		 			ORDER BY tbl_product.productId DESC";
+		$bankId = mysqli_real_escape_string($this->db->link, $id);
+		$query = "SELECT * FROM tbl_product WHERE id = '$bankId'";
 		$result = $this->db->select($query);
 		return $result;
 		}
